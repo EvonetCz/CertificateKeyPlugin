@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.evonet"
+        version="0.0.1-dev">
+
+   <name>CertificateKey</name>
+   <description>Certificate P12 Key Plugin</description>
+   <license>Apache 2.0</license>
+   <keywords>cordova,certificate, p12</keywords>
+
+   <js-module src="www/certificate.js" name="CertificateKey">
+      <clobbers target="certificate" />
+   </js-module>
+
+   <!-- android -->
+   <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+         <feature name="CertificateKey">
+            <param name="android-package" value="com.evonet.CertificateKey"/>
+         </feature>
+      </config-file>
+
+      <source-file src="src/android/CertificateKey.java" target-dir="src/com/evonet" />
+
+   </platform>
+</plugin>
